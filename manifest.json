@@ -14,5 +14,5 @@
     "scripts": ["background.js"],
     "persistant": false
   },
-  "permissions": []
+  "permissions": ["alarms"]
 }
