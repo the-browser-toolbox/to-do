@@ -14,5 +14,6 @@
     "scripts": ["background.js"],
     "persistant": false
   },
-  "permissions": ["alarms"]
+  "permissions": ["alarms", "storage"],
+  "content_security_policy": "script-src 'self'; object-src 'self'"
 }
