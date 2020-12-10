@@ -5,6 +5,7 @@ body {
   color: white;
   display: flex;
   justify-content: center;
+  overflow-y: scroll;
 }
 #main {
   padding: 2rem;
@@ -17,4 +18,8 @@ body {
 }
 .card .card-body {
   padding: 5rem;
+}
+ul li {
+  list-style: none;
+  color: black;
 }
