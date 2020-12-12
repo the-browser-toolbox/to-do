@@ -1,41 +1,58 @@
-var id = 0;
-var list = [];
-$(function () {
-  chrome.storage.sync.get("todo", function (item) {
-    if (item.todo) {
-      if (item.todo.length > 0) {
-        var length = item.todo.length;
-        var last_id = item.todo[length - 1].id;
-        id = last_id;
-        list = item.todo;
-        list.map((item) => {
-          var list = document.createElement("li");
-          list.className +=
-            "list-group-item text-capitalize d-flex justify-content-between my-2";
-          list.textContent = item.task;
-          document.getElementById("list").appendChild(list);
-        });
-      }
+let id = 0;
+let list = [];
+
+chrome.storage.sync.get("todo", (storage) => {
+  if (storage.todo) {
+    if (storage.todo.length > 0) {
+      list = storage.todo;
+      id = list[list.length - 1].id + 1;
+
+      list.map((list) => addListItem(list.value));
     }
-  });
-  $("#add-task").click(function () {
-    var task = $("#task-value").val();
-    if (task) {
-      $("#task-value").val(" ");
-      var object = {
-        id: id,
-        task: task,
-      };
-      list.push(object);
-      chrome.storage.sync.set({ todo: list }, function () {
-        console.log(object.id + "," + object.task + " are saved to storage");
-        id++;
-        var list = document.createElement("li");
-        list.className +=
-          "list-group-item text-capitalize d-flex justify-content-between my-2";
-        list.textContent = task;
-        document.getElementById("list").appendChild(list);
-      });
-    }
-  });
+  }
 });
+
+document.querySelector("#add-task").addEventListener("click", async () => {
+  const element = document.querySelector("#task-value");
+  const value = element.value;
+
+  if (!value) {
+    return;
+  }
+
+  element.value = "";
+
+  list.push({ id, value });
+
+  chrome.storage.sync.set({ todo: list }, () => addListItem(value));
+
+  id++;
+});
+
+document.querySelector("#list").addEventListener("click", function (e) {
+  setTimeout(() => {
+    var text = e.target.parentNode.textContent;
+    text = text.replace("Clear", "");
+    list = list.filter((item) => item.value !== text);
+    chrome.storage.sync.set({ todo: list });
+    e.target.parentNode.parentNode.removeChild(e.target.parentNode);
+  }, 1000);
+});
+
+function addListItem(value) {
+  const element = document.createElement("li");
+  const button = document.createElement("button");
+
+  element.classList.add(
+    "list-group-item",
+    "text-capitalize",
+    "d-flex",
+    "justify-content-between",
+    "my-2"
+  );
+  button.classList.add("btn", "btn-danger");
+  element.textContent = value;
+  button.textContent = "Clear";
+  element.appendChild(button);
+  document.querySelector("#list").appendChild(element);
+}
