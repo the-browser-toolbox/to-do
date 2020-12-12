@@ -32,7 +32,7 @@ document.querySelector("#add-task").addEventListener("click", async () => {
 document.querySelector("#list").addEventListener("click", function (e) {
   setTimeout(() => {
     var text = e.target.parentNode.textContent;
-    text = text.replace("Clear", "");
+    text = text.replace("X", "");
     list = list.filter((item) => item.value !== text);
     chrome.storage.sync.set({ todo: list });
     e.target.parentNode.parentNode.removeChild(e.target.parentNode);
@@ -41,8 +41,8 @@ document.querySelector("#list").addEventListener("click", function (e) {
 
 function addListItem(value) {
   const element = document.createElement("li");
-  const button = document.createElement("button");
-
+  const span = document.createElement("span");
+  element.setAttribute("draggable", true);
   element.classList.add(
     "list-group-item",
     "text-capitalize",
@@ -50,9 +50,11 @@ function addListItem(value) {
     "justify-content-between",
     "my-2"
   );
-  button.classList.add("btn", "btn-danger");
+  span.style.color = "red";
+  span.style.fontWeight = "900";
+  span.style.cursor = "pointer";
   element.textContent = value;
-  button.textContent = "Clear";
-  element.appendChild(button);
+  span.textContent = "X";
+  element.appendChild(span);
   document.querySelector("#list").appendChild(element);
 }
