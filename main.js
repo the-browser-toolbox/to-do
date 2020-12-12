@@ -2,14 +2,14 @@ let id = 0;
 let list = [];
 
 chrome.storage.sync.get("todo", (storage) => {
-  if (!storage.todo) {
-    return;
+  if (storage.todo) {
+    if (storage.todo.length > 0) {
+      list = storage.todo;
+      id = list[list.length - 1].id + 1;
+
+      list.map((list) => addListItem(list.value));
+    }
   }
-
-  list = storage.todo;
-  id = list[list.length - 1].id + 1;
-
-  list.map((list) => addListItem(list.value));
 });
 
 document.querySelector("#add-task").addEventListener("click", async () => {
