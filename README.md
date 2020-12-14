@@ -13,7 +13,7 @@ Find the resources for Google Chrome Extensions [here](https://github.com/the-br
 To understand the aim, scope and technologies used in the project, please see the [documentation](https://github.com/the-browser-toolbox/docs)
 
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.To start contributing, follow the guidelines here: [Contributing](https://github.com/the-browser-toolbox/docs/CONTRIBUTING.md) 
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.To start contributing, follow the guidelines here: [Contributing](https://github.com/the-browser-toolbox/to-do/CONTRIBUTING.md) 
 
 ## Support
 
