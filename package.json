@@ -1,0 +1,22 @@
+{
+  "name": "to-do",
+  "scripts": {
+    "lint": "eslint *.js",
+    "fix": "eslint *.js --fix"
+  },
+  "license": "GPL-3.0-only",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.0",
+    "husky": "^4.3.6",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+        "pre-commit": "npm run lint"
+    }
+  }
+}
