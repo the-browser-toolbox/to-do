@@ -6,7 +6,9 @@
       "webextensions": true
     },
     "rules": {
-      "prettier/prettier": "error"
+      "prettier/prettier": ["error", {
+        "endOfLine":"auto"
+      }]
     },
     "parser": "babel-eslint",
     "parserOptions": {
