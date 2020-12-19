@@ -2,7 +2,7 @@
 
 
 <p align="center" width="100%">
-    <img width="300" src="https://github.com/the-browser-toolbox/to-do/blob/main/icon.jpg"> 
+    <img width="300" src="https://github.com/amohapatra123/to-do-1/blob/main/dist/images/icon.jpg"> 
 </p>
 
 A to-do extension that has all the functionalities of a standalone to-do application, i.e., creating and managing to-do tasks, without the need to switch to a different tab/ application.
