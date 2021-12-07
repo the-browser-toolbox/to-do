@@ -4,12 +4,12 @@
   "name": "TO-DO",
   "description": "TO-DO app from the-browser-toolbox",
   "icons": {
-    "16": "icon16.jpg",
-    "52": "icon52.jpg",
-    "128": "icon128.jpg"
+    "16": "images/icon16.jpg",
+    "52": "images/icon52.jpg",
+    "128": "images/icon128.jpg"
   },
   "browser_action": {
-    "default_icon": "icon.jpg",
+    "default_icon": "images/icon.jpg",
     "default_popup": "index.html"
   },
   "background": {

@@ -9,6 +9,10 @@ A to-do extension that has all the functionalities of a standalone to-do applica
 
 Find the resources for Google Chrome Extensions [here](https://github.com/the-browser-toolbox/docs/wiki)
 
+# Installation
+* Google Chrome > Extensions > Enable Developer Mode (On top right) > Load Unpacked > Select `src/` folder from project directory
+* To install gulp globally, run the command `sudo npm install -g gulp`
+
 ## Documentation
 To understand the aim, scope and technologies used in the project, please see the [documentation](https://github.com/the-browser-toolbox/docs)
 
