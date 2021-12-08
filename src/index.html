@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>TO-DO</title>
         <link
             rel="stylesheet"
@@ -8,27 +10,51 @@
             integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="./src/style.css" />
+        <link rel="stylesheet" href="./style.css" />
     </head>
-    <body>
-        <div id="main">
-            <h2>TO-DO Input</h2>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card card-body">
-                        <div class="form-group">
-                            <input class="form-control" type="text" placeholder="Enter task" id="task-value" />
-                            <input type="button" class="btn btn-primary mt-2 btn-block" value="Add" id="add-task" />
-                        </div>
+        <body class="mobile">
+            <nav>
+                <div class="container nav-wrapper">
+                    <div class="brand">
+                        <img class ="logo"src="icon.jpg" alt ="Save_Notes Logo"/>
+                        <span><strong> <span style="color: rgb(99, 189, 224);">To-Do</span> List</strong></span>
                     </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="active">
+                            <a href="#">Home</a>
+                        </li>
+                        <li><a href="#">About</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div>
-                <h2>TO-DO List</h2>
-                <ul class="list-group my-5" id="list"></ul>
-            </div>
-        </div>
-
-        <script src="./src/main.js"></script>
+            </nav>
+            <main>
+                <section class="header container">
+                    <div>
+                        <div >
+                            <h2>TO-DO Input</h2>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card card-body">
+                                        <div class="form-group">
+                                            <input class="form-control" type="text" placeholder="Enter task" id="task-value" />
+                                            <input type="button" class="btn btn-primary mt-2 btn-block btn-color" value="Add" id="add-task" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <h2>TO-DO List</h2>
+                                <ul class="list-group my-5" id="list"></ul>
+                            </div>
+                        </div> 
+                    </div>
+                </section>
+            </main>
+        <script src="./main.js"></script>
     </body>
 </html>
