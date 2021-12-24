@@ -14,11 +14,15 @@
     --dark-gray: #999;
 }
 
-
 body {
     font-family: 'Lato', sans-serif;
     background: var(--dark);
     color: var(--pure);
+}
+
+#quote {
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 1px solid #ff0000;
 }
 
 .container {
@@ -82,6 +86,7 @@ body {
   background: transparent;
   color: var(--primary);
 }
+
 .btn:hover {
     background: transparent;
     border-color: var(--primary);
@@ -90,11 +95,15 @@ body {
 #main {
   padding: 2rem;
 }
+
 #main h2 {
   text-align: center;
 }
+
 .row {
   width: 400px;
+  display: inline-block;
+  margin: auto;
 }
 .card .card-body {
   padding: 5rem;
