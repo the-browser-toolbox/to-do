@@ -1,6 +1,4 @@
-
 //navbar section Starts
-
 
 window.addEventListener('resize', function(){
     addRequiredClass();
